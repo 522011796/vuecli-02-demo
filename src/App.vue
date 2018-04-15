@@ -7,15 +7,15 @@
         <span slot="label">Wechat</span>
       </tabbar-item>
       <tabbar-item show-dot>
-        <i slot="icon" class="fa fa-home"></i>
+        <i slot="icon" class="fa fa-music"></i>
         <span slot="label">Message</span>
       </tabbar-item>
       <tabbar-item selected>
-        <i slot="icon" class="fa fa-home"></i>
+        <i slot="icon" class="fa fa-video-camera"></i>
         <span slot="label">Explore</span>
       </tabbar-item>
       <tabbar-item>
-        <i slot="icon" class="fa fa-home"></i>
+        <i slot="icon" class="fa fa-user"></i>
         <span slot="label">News</span>
       </tabbar-item>
     </tabbar>
