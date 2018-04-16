@@ -6,6 +6,7 @@ import FastClick from 'fastclick'
 import VueRouter from 'vue-router'
 import App from './App'
 import 'font-awesome/css/font-awesome.min.css'
+import 'animate.css'
 
 Vue.use(VueRouter)
 

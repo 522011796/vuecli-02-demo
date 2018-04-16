@@ -9,7 +9,7 @@
     </div>
     <div>
       <group>
-        <cell title="Cell" value="value" is-link></cell>
+        <cell title="Cell" value="value" link="/detail" is-link></cell>
         <cell title="Cell" value="value" is-link></cell>
         <cell title="Cell" value="value" is-link></cell>
         <cell title="Cell" value="value" is-link></cell>

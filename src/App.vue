@@ -2,11 +2,11 @@
   <div class="wrap">
     <router-view></router-view>
     <tabbar style="position: relative;">
-      <tabbar-item>
+      <tabbar-item link="/music">
         <i slot="icon" class="fa fa-home"></i>
         <span slot="label">Wechat</span>
       </tabbar-item>
-      <tabbar-item show-dot>
+      <tabbar-item link="/myMusic" show-dot>
         <i slot="icon" class="fa fa-music"></i>
         <span slot="label">Message</span>
       </tabbar-item>
