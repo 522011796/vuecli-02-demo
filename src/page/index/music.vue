@@ -8,26 +8,19 @@
       </swiper>
     </div>
     <div>
-      <group>
-        <cell title="Cell" value="value" link="/detail" is-link></cell>
-        <cell title="Cell" value="value" is-link></cell>
-        <cell title="Cell" value="value" is-link></cell>
-        <cell title="Cell" value="value" is-link></cell>
-        <cell title="Cell" value="value" is-link></cell>
-        <cell title="Cell" value="value" is-link></cell>
-        <cell title="Cell" value="value" is-link></cell>
-        <cell title="Cell" value="value" is-link></cell>
-        <cell title="Cell" value="value" is-link></cell>
-        <cell title="Cell" value="value" is-link></cell>
-        <cell title="Cell" value="value" is-link></cell>
-        <cell title="Cell" value="value" is-link></cell>
-        <cell title="Cell" value="value" is-link></cell>
-      </group>
+      <draggable :list="list2" :move="getdata" @update="datadragEnd" :options="{animation: 100,handle:'.dargDiv'}">
+        <transition-group name="list-complete" >
+          <group v-for="element in list2" :key="element.it.name" class="dargDiv">
+            <cell :title="element.id" :value="element.it.name"></cell>
+          </group>
+        </transition-group>
+      </draggable>
     </div>
   </div>
 </template>
 
 <script>
+import draggable from 'vuedraggable'
 import { Tabbar, TabbarItem, Group, Cell, XHeader, Tab, TabItem, Swiper, SwiperItem } from 'vux'
 const imgList = [
   'http://placeholder.qiniudn.com/800x300/FF3B3B/ffffff',
@@ -44,11 +37,27 @@ export default {
     Tab,
     TabItem,
     Swiper,
-    SwiperItem
+    SwiperItem,
+    draggable
   },
   data () {
     return {
       list: imgList,
+      list2:[
+        {id:"id1",it:{name:'点击拖动'}},
+        {id:"id2",it:{name:'点击拖动'}},
+        {id:"id3",it:{name:'点击拖动'}},
+        {id:"id4",it:{name:'点击拖动'}}
+      ]
+    }
+  },
+  methods: {
+    getdata (evt) {
+      console.log(evt.draggedContext.element.id)
+    },
+    datadragEnd (evt) {
+      console.log('拖动前的索引 :' + evt.oldIndex);
+      console.log('拖动后的索引 :' + evt.newIndex);
     }
   }
 }
