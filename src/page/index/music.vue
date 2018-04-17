@@ -40,7 +40,7 @@
       <div>
         <flexbox wrap="wrap" :gutter="0">
           <flexbox-item :span="1/3" v-for="(item, index) in tuijian" :key="index">
-            <div style="height:100px;width: 100%">
+            <div style="height:100px;width: 100%" v-on:click="selList(item.id)">
               <img :src="item.picUrl" style="height:100%;width: 100%">
             </div>
             <div style="color: #666666;font-size: 12px;height:35px;">{{item.name}}</div>
@@ -124,9 +124,11 @@ export default {
     },
     getNewData(){
       this.$api.get('/top/album?offset=0&limit=6', null, r => {
-        console.log(r);
         this.newList = r.albums;
       })
+    },
+    selList(id){
+      this.$router.push('/detail/'+id);
     }
   }
 }

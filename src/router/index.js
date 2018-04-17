@@ -6,6 +6,7 @@ import Music from '@/page/index/music'
 import Diantai from '@/page/index/diantai'
 import MyMusic from '@/page/myMusic/index'
 import Detail from '@/page/index/detail'
+import PlayMusic from '@/page/index/playMusic'
 
 Vue.use(Router)
 
@@ -32,9 +33,14 @@ export default new Router({
       component: MyMusic,
     },
     {
-      path: '/detail',
+      path: '/detail/:id',
       name: 'detail',
       component: Detail,
+    },
+    {
+      path: '/playMusic',
+      name: 'playMusic',
+      component: PlayMusic,
     }
   ]
 })

@@ -8,11 +8,11 @@
       <router-view></router-view>
     </div>
 
-    <div style="position: fixed;bottom:0;background: #000;height:50px;width: 100%">
+    <div v-if="!showMusicPlayer" style="position: fixed;bottom:0;background: #000;height:50px;width: 100%">
       <tabbar>
         <tabbar-item link="/music">
           <i slot="icon" class="fa fa-home"></i>
-          <span slot="label">Wechat</span>
+          <span slot="label">--------{{showMusicPlayer}}</span>
         </tabbar-item>
         <tabbar-item link="/myMusic" show-dot>
           <i slot="icon" class="fa fa-music"></i>
@@ -49,7 +49,7 @@ export default {
   },
   data() {
     return {
-
+      showMusicPlayer : false
     }
   },
   created(){
