@@ -132,7 +132,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
   .swiper-demo-img img {
     width: 100%;
   }

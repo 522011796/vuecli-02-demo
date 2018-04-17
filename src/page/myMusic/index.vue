@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <div class="header">
-      <x-header :left-options="{showBack: false}" >do not show Back</x-header>
+      <x-header :left-options="{showBack: false}" >my music</x-header>
     </div>
     <div class="main">
       my music
@@ -39,7 +39,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
   .wrap{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:100%;height:100%;}
   .header,.footer{
     background-color:#D8D8D8;
