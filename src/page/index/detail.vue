@@ -66,8 +66,8 @@
       <ul>
         <li @click="playMusic(item.id,item.artists[0].name)" v-for="(item, index) in musicList" style="border-bottom:1px solid #dddddd;padding:10px 10px 25px 10px">
           <div style="float: left;font-size:12px;">
-            <div style="font-size: 14px">{{item.name}}<span style="color:#999999;font-size:12px;">({{item.album.alias[0]}})</span></div>
-            <div>{{item.artists[0].name}} - {{item.name}}</div>
+            <div style="font-size: 14px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;width:200px;">{{item.name}}<span style="color:#999999;font-size:12px;">({{item.album.alias[0]}})</span></div>
+            <div style="text-overflow:ellipsis;white-space:nowrap;overflow:hidden;width:200px;">{{item.artists[0].name}} - {{item.name}}</div>
           </div>
           <div style="float: right">
             <i class="fa fa-play-circle-o"></i>
