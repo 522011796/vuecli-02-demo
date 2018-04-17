@@ -23,6 +23,9 @@ export default {
     Swiper,
     SwiperItem
   },
+  created(){
+    this.getData();
+  },
   data () {
     return {
       playerOptions : {
@@ -47,7 +50,16 @@ export default {
           remainingTimeDisplay: false,
           fullscreenToggle: true  //全屏按钮
         }
-      }
+      },
+      mvList:[]
+    }
+  },
+  methods:{
+    getData(){
+      this.$api.get('top/mv?limit=15', null, r => {
+        console.log(r.data);
+        this.mvList = r.data;
+      });
     }
   }
 }
