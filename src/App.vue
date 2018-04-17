@@ -1,27 +1,49 @@
 <template>
-  <div class="wrap">
-    <router-view></router-view>
-    <tabbar style="position: relative;">
-      <tabbar-item link="/music">
-        <i slot="icon" class="fa fa-home"></i>
-        <span slot="label">Wechat</span>
-      </tabbar-item>
-      <tabbar-item link="/myMusic" show-dot>
-        <i slot="icon" class="fa fa-music"></i>
-        <span slot="label">Message</span>
-      </tabbar-item>
-      <tabbar-item selected>
-        <i slot="icon" class="fa fa-video-camera"></i>
-        <span slot="label">Explore</span>
-      </tabbar-item>
-      <tabbar-item>
-        <i slot="icon" class="fa fa-user"></i>
-        <span slot="label">News</span>
-      </tabbar-item>
-    </tabbar>
+  <div style="height: 100%;display: flex;flex-direction: column;">
+    <div style="height:50px;flex: 1;overflow-y: auto;-webkit-overflow-scrolling: touch;margin-bottom:50px;">
+      <router-view></router-view>
+    </div>
+    <div>
+      <tabbar>
+        <tabbar-item link="/music">
+          <i slot="icon" class="fa fa-home"></i>
+          <span slot="label">Wechat</span>
+        </tabbar-item>
+        <tabbar-item link="/myMusic" show-dot>
+          <i slot="icon" class="fa fa-music"></i>
+          <span slot="label">Message</span>
+        </tabbar-item>
+        <tabbar-item selected>
+          <i slot="icon" class="fa fa-video-camera"></i>
+          <span slot="label">Explore</span>
+        </tabbar-item>
+        <tabbar-item>
+          <i slot="icon" class="fa fa-user"></i>
+          <span slot="label">News</span>
+        </tabbar-item>
+      </tabbar>
+    </div>
   </div>
 </template>
-
+<!--<router-view style="margin-bottom:50px;border:3px solid #f00;"></router-view>
+<tabbar>
+  <tabbar-item link="/music">
+    <i slot="icon" class="fa fa-home"></i>
+    <span slot="label">Wechat</span>
+  </tabbar-item>
+  <tabbar-item link="/myMusic" show-dot>
+    <i slot="icon" class="fa fa-music"></i>
+    <span slot="label">Message</span>
+  </tabbar-item>
+  <tabbar-item selected>
+    <i slot="icon" class="fa fa-video-camera"></i>
+    <span slot="label">Explore</span>
+  </tabbar-item>
+  <tabbar-item>
+    <i slot="icon" class="fa fa-user"></i>
+    <span slot="label">News</span>
+  </tabbar-item>
+</tabbar>-->
 <script>
 import { Tabbar, TabbarItem, Group, Cell, XHeader, Tab, TabItem, Swiper, SwiperItem } from 'vux'
 
@@ -54,6 +76,8 @@ export default {
 
 body {
   background-color: #fbf9fe;
+  height: 100%;
+  overflow-x: hidden;
 }
 html,body{height:100%;}
 .wrap{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:100%;height:100%;}
@@ -68,6 +92,7 @@ html,body{height:100%;}
   flex:1;
   width:100%;
   overflow:auto;/* winphone8和android4+ */
-  -webkit-overflow-scrolling: touch; /* ios5+ */
+  -webkit-overflow-scrolling: touch;    /* ios5+ */
+  z-index:1;
 }
 </style>

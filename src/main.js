@@ -8,9 +8,13 @@ import App from './App'
 import 'font-awesome/css/font-awesome.min.css'
 import 'animate.css'
 import VideoPlayer from 'vue-video-player'
+// 引用API文件
+import api from './api/index.js'
 require('video.js/dist/video-js.css')
 require('vue-video-player/src/custom-theme.css')
 
+// 将API方法绑定到全局
+Vue.prototype.$api = api;
 Vue.use(VideoPlayer);
 Vue.use(VueRouter)
 
