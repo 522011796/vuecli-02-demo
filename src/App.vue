@@ -1,7 +1,7 @@
 <template>
   <div style="height: 100%;display: flex;flex-direction: column;">
-    <div style="height:50px;flex: 1;overflow-y: auto;-webkit-overflow-scrolling: touch;margin-bottom:50px;">
-      <router-view></router-view>
+    <div style="flex: 1;overflow-y: auto;-webkit-overflow-scrolling: touch;padding-bottom:50px;">
+      <router-view style="height: calc(100% + 1px)"></router-view>
     </div>
     <div>
       <tabbar>
