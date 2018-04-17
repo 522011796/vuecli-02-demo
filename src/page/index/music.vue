@@ -118,7 +118,6 @@ export default {
     },
     getTuijianData(){
       this.$api.get('/personalized?limit=6', null, r => {
-        console.log(r);
         this.tuijian = r.result;
       })
     },
@@ -128,6 +127,7 @@ export default {
       })
     },
     selList(id){
+      this.$defines.setShow(true);
       this.$router.push('/detail/'+id);
     }
   }

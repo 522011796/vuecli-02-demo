@@ -3,16 +3,14 @@
     <!--<div style="position: fixed;top:0;background: #00f;height:50px;width: 100%">
 
     </div>-->
-
-    <div style="position: fixed;bottom:50px;top:0px;width: 100%;overflow-y: auto;-webkit-overflow-scrolling: touch;">
+    <div :style="{position: 'fixed',bottom:!$defines.show?50+'px':0+'px',top:0,width: '100%',overflowY: 'auto',webkitOverflowScrolling: 'touch'}">
       <router-view></router-view>
     </div>
-
-    <div v-if="!showMusicPlayer" style="position: fixed;bottom:0;background: #000;height:50px;width: 100%">
+    <div v-if="!$defines.show" style="position: fixed;bottom:0;background: #000;height:50px;width: 100%">
       <tabbar>
         <tabbar-item link="/music">
           <i slot="icon" class="fa fa-home"></i>
-          <span slot="label">--------{{showMusicPlayer}}</span>
+          <span slot="label">{{$defines.show}}</span>
         </tabbar-item>
         <tabbar-item link="/myMusic" show-dot>
           <i slot="icon" class="fa fa-music"></i>
@@ -32,6 +30,7 @@
 </template>
 <!---->
 <script>
+import Player from './components/player'
 import { Tabbar, TabbarItem, Group, Cell, XHeader, Tab, TabItem, Swiper, SwiperItem } from 'vux'
 
 export default {
@@ -45,11 +44,20 @@ export default {
     Tab,
     TabItem,
     Swiper,
-    SwiperItem
+    SwiperItem,
+    Player
   },
   data() {
     return {
-      showMusicPlayer : false
+      showMusicPlayer : false,
+      positionBottom:50
+    }
+  },
+  watch: {
+    '$route' (to, from) {
+      if(from.name == 'detail'){
+        this.$defines.setShow(false);
+      }
     }
   },
   created(){

@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap" style="color:#ffffff;overflow-x:hidden;height:100%;overflow-y: auto;position: relative">
+  <div class="wrap" style="color:#ffffff;overflow-x:hidden;height:100%;overflow-y: auto;-webkit-overflow-scrolling: touch;position: relative">
     <div style="position: relative">
       <div :style="{backgroundImage: 'url(' + backgroundImg + ')',width:'100%',height:'215px',position: 'absolute',top:0,webkitFilter: 'blur(2px)'}">
 
@@ -62,7 +62,7 @@
         </flexbox>
       </div>
     </div>
-    <div style="position: absolute;top:220px;left:0;z-index: 99999;color:#555555;width: 100%;margin:0;padding:0;padding-bottom:55px;">
+    <div style="position: absolute;top:220px;left:0;z-index: 99999;color:#555555;width: 100%;margin:0;padding:0;padding-bottom:0px;">
       <ul>
         <li @click="playMusic(item.id,item.artists[0].name)" v-for="(item, index) in musicList" style="border-bottom:1px solid #dddddd;padding:10px 10px 25px 10px">
           <div style="float: left;font-size:12px;">
@@ -75,7 +75,7 @@
         </li>
       </ul>
     </div>
-    <aplayer v-if="flag" ref="player" style="position: fixed;bottom:50px;z-index:99999;margin:0;width: 100%" autoplay :music="{
+    <aplayer v-if="flag" ref="player" style="position: fixed;bottom:0px;z-index:99999;margin:0;width: 100%" autoplay :music="{
         title: '',
         author: author,
         url: musicSource,
@@ -128,7 +128,6 @@ export default {
   methods: {
     getData() {
       this.$api.get('/playlist/detail?id=' + this.id, null, r => {
-        console.log(r.result);
         this.coverImgUrl = r.result.coverImgUrl;
         this.name = r.result.name;
         this.nickname = r.result.creator.nickname;

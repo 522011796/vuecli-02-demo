@@ -12,6 +12,7 @@ import VideoPlayer from 'vue-video-player'
 import api from './api/index.js'
 require('video.js/dist/video-js.css')
 require('vue-video-player/src/custom-theme.css')
+import defines from './assets/config/config'
 
 // 将API方法绑定到全局
 Vue.prototype.$api = api;
@@ -19,6 +20,9 @@ Vue.use(VideoPlayer);
 Vue.use(VueRouter)
 
 FastClick.attach(document.body)
+
+//全局，尽量少用吧
+Vue.prototype.$defines = defines;
 
 Vue.config.productionTip = false
 
