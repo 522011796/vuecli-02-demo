@@ -11,19 +11,19 @@
       <flexbox style="border-bottom: 1px solid #dddddd;padding:3px 0px;">
         <flexbox-item>
           <div class="flex-demo" style="text-align: center">
-            <div><i class="fa fa-home fa-2x" style="color:#f00;"></i></div>
+            <div><i class="fa fa-podcast fa-2x" style="color:#f00;"></i></div>
             <div style="font-size: 12px;color:#f00;">私人FM</div>
           </div>
         </flexbox-item>
         <flexbox-item>
           <div class="flex-demo" style="text-align: center">
-            <div><i class="fa fa-home fa-2x" style="color:#f00;"></i></div>
+            <div><i class="fa fa-calendar fa-2x" style="color:#f00;"></i></div>
             <div style="font-size: 12px;color:#f00;">每日推荐</div>
           </div>
         </flexbox-item>
         <flexbox-item>
           <div class="flex-demo" style="text-align: center">
-            <div><i class="fa fa-home fa-2x" style="color:#f00;"></i></div>
+            <div><i class="fa fa-desktop fa-2x" style="color:#f00;"></i></div>
             <div style="font-size: 12px;color:#f00;">歌单</div>
           </div>
         </flexbox-item>
